@@ -1,0 +1,120 @@
+.cartContainer{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    flex-direction: column;
+    flex: 1;
+    height: 87.8vh;
+    overflow: scroll;
+    background: linear-gradient(
+    rgba(255, 230, 199, 0.812),
+    rgba(255, 230, 199, 0.832)
+  ),repeat-y url("../art/pizzabg3.jpg") center ;
+}
+
+.cartContainer::-webkit-scrollbar{
+  display: none;
+}
+
+.cartHeading{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background: linear-gradient(
+    rgba(255, 230, 199, 0.874),
+    rgba(255, 230, 199, 0.89)
+  ),repeat-y url("../art/pizzabg3.jpg") 35% 26%;
+    color: #FF6000;
+    width: 100%;
+    height: 90px;
+    opacity: 0.9;
+}
+
+.cartItems{
+    height: 56.2vh;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    align-items: center;
+    padding: 13px;
+    background: linear-gradient(
+    rgba(255, 230, 199, 0.889),
+    rgba(255, 230, 199, 0.894)
+  ),repeat-y url("../art/pizzabg3.jpg") 50% 20%;
+}
+
+.cartItems::-webkit-scrollbar{
+  display: none;
+}
+
+.checkout{
+    display: flex;
+    height: 130px;
+    width: 100%;
+    background: linear-gradient(
+    rgba(255, 98, 0, 0.807),
+    rgba(255, 98, 0, 0.8)
+  ),repeat-y url("../art/pizzabg3.jpg");
+  background-size: cover;
+    border-radius: 30px 30px 0 0;
+    flex-direction: column;
+    bottom: 0;
+}
+
+.gross{
+  color: antiquewhite;
+  width: 100%;
+  flex: 1;
+  display: flex;
+}
+
+.grossText{
+  padding: 0px 40px;
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+
+.meraHR{
+  
+  border: antiquewhite 2px solid;
+  color: antiquewhite;
+}
+
+.total{
+  padding: 0px 50px;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: end;
+}
+
+.payment{
+  padding: 7px;
+  display: flex;
+  width: 100%;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.payBtn{
+  background: #454545;
+  
+  color: antiquewhite;
+  padding: 5px;
+  width: 90%;
+  font-size: 25px;
+  font-weight: 700;
+  border-radius: 16px;
+  border: none;
+}
+
+.payBtn:hover{
+  
+  background: rgba(255, 230, 199);
+  color: #FF6000;
+}
+
+
+

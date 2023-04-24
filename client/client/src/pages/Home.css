@@ -1,0 +1,9 @@
+.homeContainer{
+    
+  background-size: cover;
+  background: url("../art/pizzabg3.jpg");
+}
+
+.content{
+    display: flex;
+}

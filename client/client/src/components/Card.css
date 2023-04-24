@@ -1,0 +1,98 @@
+.card{
+  flex: 1;
+  margin: 9px;
+  min-width: 280px;
+  max-width: 280px;;
+  min-height: 420px;
+  background-color: antiquewhite;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: 8%;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease; 
+  cursor: pointer;
+}
+
+.card:hover{
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  transition: box-shadow 0.3s ease; 
+}
+
+.butts{
+  display: flex;
+  justify-content: space-around;
+}
+
+.cardbutt{
+  color: #ff5600;
+  font-weight: 700;
+  width: fit-content;
+  padding: 15px;
+  border-radius: 16px;
+  border: none;
+  background-color: #FFA559;
+}
+
+.cardbutt:hover{
+  background-color: #ff5600;
+  color: #ffa559;
+}
+
+.pizzaImg{
+  height: 100%;
+  width: 100%;
+
+}
+
+.cardImg{
+
+  flex: 5;
+  display: flex;
+  background-color: white;
+  width: 100%;
+  
+}
+
+.cardInfo{
+  padding: 10px;
+  font-weight: 500;
+  flex: 6;
+  display: flex;
+  background-color: antiquewhite;
+  width: 90%;  
+  flex-direction: column;
+  color: #454545;
+  justify-content: space-around;
+}
+
+.pizzaName{
+  display: flex;
+  align-items: center;
+}
+
+
+.pizzaName h3{
+  justify-content: center;
+  align-items: center;
+  font-size: 23px;
+  color: #ff5600;
+  flex: 5;
+}
+
+.pizzaDec p{
+  font-size: 14px;
+  margin: 7px 5px;
+}
+
+.pizzaName span{
+  justify-content: left;
+  display: flex;
+  color: #ff5600;
+  font-size: 19px;
+  font-weight: 600;
+  flex: 2;
+  align-items: center;
+}
