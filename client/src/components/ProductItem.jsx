@@ -43,6 +43,7 @@ const ProductItem = () => {
                 <MenuItem defaultChecked value="">
                   Select Base
                 </MenuItem>
+                <MenuItem value={"Regular"}>Regular</MenuItem>
                 <MenuItem value={"ThinCrust"}>Thin Crust</MenuItem>
                 <MenuItem value={"ThickCrust"}>Thick Crust</MenuItem>
                 <MenuItem value={"StuffedCrust"}>Stuffed Crust</MenuItem>
@@ -69,7 +70,7 @@ const ProductItem = () => {
                 <MenuItem value={"Pesto"}>Pesto</MenuItem>
                 <MenuItem value={"WhiteGarlic"}>White Garlic Sauce</MenuItem>
                 <MenuItem value={"GarlicRanch"}>Garlic Ranch Sauce</MenuItem>
-                <MenuItem value={"Hummus"}>Hummus</MenuItem>
+                <MenuItem value={"Marinara"}>Marinara</MenuItem>
               </Select>
             </div>
             <div className="customItem">

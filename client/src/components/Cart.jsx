@@ -11,6 +11,7 @@ const Cart = () => {
         <div className="cartItems">
           <CartItem/>
           <CartItem/>
+          
         </div>
         <div className="checkout">
           <div className="gross">

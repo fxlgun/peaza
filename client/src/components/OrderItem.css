@@ -1,0 +1,33 @@
+.orderItemContainer {
+  justify-content: space-evenly;
+  display: flex;
+  width: 97%;
+  background-color: white;
+  border-radius: 16px;
+  margin: 1% 0;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  
+  flex-direction: column;
+}
+
+.IDhead{
+  padding: 10px;
+  background-color: #454545;
+  border-radius: 15px 15px 0 0;
+  color: #FFE6C7;
+}
+
+.orderItemss{
+  padding: 15px;
+  background-color: #FFE6C7;
+  color: #ff6500;
+}
+
+.orderTotal{
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  background-color: #ff6500;
+  border-radius: 0 0 15px 15px;
+  color: #FFE6C7;
+}

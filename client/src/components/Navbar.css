@@ -36,7 +36,7 @@
     flex: 1;
     display: flex;
     align-items: center;
-    justify-content: right;
+    justify-content: space-between;
     font-size: 20px;
     font-weight: 600;
 }
@@ -51,6 +51,14 @@
     cursor: pointer;
 }
 
+.navItemss{
+    cursor: pointer;
+}
+
+.navItemss:hover{
+    color: #FFA559;
+}
+
 
 .titleHead{
     color: #FFE6C7;
@@ -59,4 +67,8 @@
     font-family: "Sacramento";
     top:0.5px;
     left: 5px;
+}
+
+.titleHead:hover{
+    color: #FFA559;
 }

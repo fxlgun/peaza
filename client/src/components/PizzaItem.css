@@ -1,0 +1,6 @@
+.pizzaItemContainer{
+    display: flex;
+    justify-content: space-between;
+    margin: 3px;
+    padding: 2px;
+}
