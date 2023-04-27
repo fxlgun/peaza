@@ -17,7 +17,7 @@ const Card = (props) => {
           <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armo</p>
         </div>
         <div className="butts">
-          <button className="cardbutt">Add to Cart</button>
+          {/* <button className="cardbutt">Add to Cart</button> */}
           <button className="cardbutt">Customise</button>
         </div>
         
