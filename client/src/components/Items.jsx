@@ -1,8 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Items.css";
 import Card from "./Card";
+import { userReq } from "../reqMethods";
 
 const Items = () => {
+  const [pizzas, setPizzas] = useState([]);
+
+  useEffect(() => {
+    const getPizzas = async () => {
+      userReq
+        .get("/pizza")
+        .then((res) => setPizzas(res.data))
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+    getPizzas();
+  }, []);
+  console.log(pizzas);
+
   return (
     <div className="itemContainer">
       <div className="itemHeading">
@@ -10,13 +26,7 @@ const Items = () => {
       </div>
 
       <div className="cards">
-      <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        
+        {pizzas?.map((pija)=> <Card pija={pija} />)}
       </div>
     </div>
   );

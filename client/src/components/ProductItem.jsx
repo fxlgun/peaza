@@ -67,6 +67,7 @@ const ProductItem = () => {
                 <MenuItem defaultChecked value="">
                   Select Sauce
                 </MenuItem>
+                <MenuItem value={"Alfredo"}>Alfredo</MenuItem>
                 <MenuItem value={"Pesto"}>Pesto</MenuItem>
                 <MenuItem value={"WhiteGarlic"}>White Garlic Sauce</MenuItem>
                 <MenuItem value={"GarlicRanch"}>Garlic Ranch Sauce</MenuItem>
@@ -94,6 +95,7 @@ const ProductItem = () => {
                 <MenuItem value={"Cheddar"}>Cheddar</MenuItem>
                 <MenuItem value={"Parmesan"}>Parmesan</MenuItem>
                 <MenuItem value={"Provolone"}>Provolone</MenuItem>
+                <MenuItem value={"Ricotta"}>Ricotta</MenuItem>
               </Select>
             </div>
             <div className="customItem">
@@ -117,6 +119,7 @@ const ProductItem = () => {
                 <MenuItem value={"Onions"}>Onions</MenuItem>
                 <MenuItem value={"Peppers"}>Peppers</MenuItem>
                 <MenuItem value={"Olives"}>Olives</MenuItem>
+                <MenuItem value={"Jalapeno"}>Jalapeno</MenuItem>
               </Select>
             </div>
           </div>
