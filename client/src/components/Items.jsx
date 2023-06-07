@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import "./Items.css";
 import Card from "./Card";
 import { userReq } from "../reqMethods";
+import { useNavigate } from "react-router-dom";
 
 const Items = () => {
+  const navigate =  useNavigate();
   const [pizzas, setPizzas] = useState([]);
 
   useEffect(() => {
@@ -17,7 +19,7 @@ const Items = () => {
     };
     getPizzas();
   }, []);
-  console.log(pizzas);
+
 
   return (
     <div className="itemContainer">
@@ -26,7 +28,7 @@ const Items = () => {
       </div>
 
       <div className="cards">
-        {pizzas?.map((pija)=> <Card pija={pija} />)}
+        {pizzas?.map((pija, index)=> <Card key={index}  pija={pija}  />)}
       </div>
     </div>
   );

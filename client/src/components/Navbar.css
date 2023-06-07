@@ -51,12 +51,17 @@
     cursor: pointer;
 }
 
+.navItems:hover{
+    color: #FFE6C7;
+    background-color: #454545;
+}
+
 .navItemss{
     cursor: pointer;
 }
 
 .navItemss:hover{
-    color: #FFA559;
+    color: #454545;
 }
 
 

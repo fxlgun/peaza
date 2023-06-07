@@ -1,34 +1,94 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./ProductItem.css";
 import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
+import toast, { Toaster } from "react-hot-toast";
+import Select from "@mui/material/Select";
+import { useLocation } from "react-router-dom";
+import { userReq } from "../reqMethods";
+import { useDispatch } from "react-redux";
+import { addPizza } from "../redux/cartRedux";
 
 const ProductItem = () => {
+  const dispatch = useDispatch();
+  const location = useLocation();
+  const id = location.pathname.split("/")[2];
+  const [pizza, setPizza] = useState({});
+  const [od, setOd] = useState({
+    pizzaName: "",
+    price: 0,
+    quantity: 1,
+    customItems: {
+      base: "Regular",
+      sauce: "Alfredo",
+      cheese: "Mozzarella",
+      veggies: "Mushrooms",
+    },
+  });
+
+
+  const handleAddToCart = () => {
+    if (od.quantity>0) {
+      dispatch(addPizza(od))
+    } else {
+      toast.error('Select Valid Quantity')
+    }
+  }
+
+  const handleQuantity = (lol) => {
+    if(lol==="add"){
+      setOd({ ...od, quantity: od.quantity + 1 })
+    }
+    else{
+      if (od.quantity > 1) {
+        setOd({ ...od, quantity: od.quantity - 1 })
+      }
+    }
+  }
+
+
+  useEffect(() => {
+    const getPizza = async () => {
+      const { data } = await userReq.get(`pizza/${id}`);
+      setPizza(data);
+      setOd({
+        ...od,
+        image: data.image,
+        pizzaName: data.pizzaName,
+        price: data.price,
+        quantity: 1,
+      });
+    };
+    getPizza();
+  }, [id]);
+
   return (
     <div className="productContainer">
       <div className="productWrapper">
+      <Toaster/>
         <div className="productImgCon">
-          <img
-            className="productImg"
-            src="https://b.zmtcdn.com/data/pictures/chains/6/111026/a0c3bcc09b1448a7138beda386f8db21.jpg"
-            alt=""
-          />
+          <img className="productImg" src={pizza?.image} alt="" />
         </div>
         <div className="productInfo">
           <div className="productTitle">
-            <h1 className="productHead">Margherita</h1>
-            <p className="productDes">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam
-              asperiores error pariatur, repudiandae cum earum in ducimus.
-              Reiciendis totam facere ex aperiam et dolorem rerum voluptatum
-              dolores eum? Laboriosam, beatae.
-            </p>
+            <h1 className="productHead">{pizza?.pizzaName}</h1>
+            <p className="productDes">{pizza?.description}</p>
           </div>
           <div className="customCon">
             <div className="customItem">
               <h3 className="customItemName">Select a Base:</h3>
               <Select
+                value={od.customItems.base}
+                onChange={(e) => {
+                  setOd({
+                    ...od,
+                    customItems: {
+                      ...od.customItems,
+                      base: e.target.value,
+                    },
+                  });
+                }}
                 style={{
                   fontWeight: "600",
                   fontFamily: "Montserrat",
@@ -40,10 +100,9 @@ const ProductItem = () => {
                 }}
                 inputProps={{ "aria-label": "Without label" }}
               >
-                <MenuItem defaultChecked value="">
-                  Select Base
+                <MenuItem defaultChecked value={"Regular"}>
+                  Regular
                 </MenuItem>
-                <MenuItem value={"Regular"}>Regular</MenuItem>
                 <MenuItem value={"ThinCrust"}>Thin Crust</MenuItem>
                 <MenuItem value={"ThickCrust"}>Thick Crust</MenuItem>
                 <MenuItem value={"StuffedCrust"}>Stuffed Crust</MenuItem>
@@ -53,6 +112,16 @@ const ProductItem = () => {
             <div className="customItem">
               <h3 className="customItemName">Select a Sauce:</h3>
               <Select
+                value={od.customItems.sauce}
+                onChange={(e) => {
+                  setOd({
+                    ...od,
+                    customItems: {
+                      ...od.customItems,
+                      sauce: e.target.value,
+                    },
+                  });
+                }}
                 style={{
                   fontWeight: "600",
                   fontFamily: "Montserrat",
@@ -64,10 +133,9 @@ const ProductItem = () => {
                 }}
                 inputProps={{ "aria-label": "Without label" }}
               >
-                <MenuItem defaultChecked value="">
-                  Select Sauce
+                <MenuItem defaultChecked value={"Alfredo"}>
+                  Alfredo
                 </MenuItem>
-                <MenuItem value={"Alfredo"}>Alfredo</MenuItem>
                 <MenuItem value={"Pesto"}>Pesto</MenuItem>
                 <MenuItem value={"WhiteGarlic"}>White Garlic Sauce</MenuItem>
                 <MenuItem value={"GarlicRanch"}>Garlic Ranch Sauce</MenuItem>
@@ -77,6 +145,16 @@ const ProductItem = () => {
             <div className="customItem">
               <h3 className="customItemName">Select a Cheese:</h3>
               <Select
+                value={od.customItems.cheese}
+                onChange={(e) => {
+                  setOd({
+                    ...od,
+                    customItems: {
+                      ...od.customItems,
+                      cheese: e.target.value,
+                    },
+                  });
+                }}
                 style={{
                   fontWeight: "600",
                   fontFamily: "Montserrat",
@@ -88,9 +166,6 @@ const ProductItem = () => {
                 }}
                 inputProps={{ "aria-label": "Without label" }}
               >
-                <MenuItem defaultChecked value="">
-                  Select Cheese
-                </MenuItem>
                 <MenuItem value={"Mozzarella"}>Mozzarella</MenuItem>
                 <MenuItem value={"Cheddar"}>Cheddar</MenuItem>
                 <MenuItem value={"Parmesan"}>Parmesan</MenuItem>
@@ -101,6 +176,16 @@ const ProductItem = () => {
             <div className="customItem">
               <h3 className="customItemName">Select a Veggie:</h3>
               <Select
+                value={od.customItems.veggies}
+                onChange={(e) => {
+                  setOd({
+                    ...od,
+                    customItems: {
+                      ...od.customItems,
+                      veggies: e.target.value,
+                    },
+                  });
+                }}
                 style={{
                   fontWeight: "600",
                   fontFamily: "Montserrat",
@@ -112,9 +197,6 @@ const ProductItem = () => {
                 }}
                 inputProps={{ "aria-label": "Without label" }}
               >
-                <MenuItem defaultChecked value="">
-                  Select Veggie
-                </MenuItem>
                 <MenuItem value={"Mushrooms"}>Mushrooms</MenuItem>
                 <MenuItem value={"Onions"}>Onions</MenuItem>
                 <MenuItem value={"Peppers"}>Peppers</MenuItem>
@@ -124,8 +206,23 @@ const ProductItem = () => {
             </div>
           </div>
           <div className="addCartCon">
-            <span className="productPrice">₹ 4000</span>
-            <button className="addCart">Add to Cart</button>
+            <span className="productPrice">
+              ₹ {pizza.price}
+            </span>
+            <div className="quanCont">
+              {" "}
+              <button
+                onClick={() => handleQuantity("add")}
+                className="quanbutt"
+              >
+                <AddIcon />
+              </button>{" "}
+              <span className="quantit"> {od.quantity} </span>
+              <button onClick={() => handleQuantity("sub")} className="quanbutt">
+                <RemoveIcon />
+              </button>{" "}
+            </div>
+            <button onClick={handleAddToCart} className="addCart">Add to Cart</button>
           </div>
         </div>
       </div>

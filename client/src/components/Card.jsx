@@ -1,11 +1,13 @@
 import React from 'react'
 import "./Card.css"
+import { useNavigate } from 'react-router-dom';
 
 const Card = (props) => {
+  const navigate = useNavigate();
   const Piz = props.pija;
     
   return (
-    <div className='card'>
+    <div className='card' onClick={() => navigate(`/pizza/${Piz._id}`)} >
       <div className="cardImg">
         <img className='pizzaImg' src={Piz.image} alt="" />
       </div>

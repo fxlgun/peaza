@@ -1,8 +1,7 @@
 .cItemContainer {
- 
   display: flex;
   width: 97%;
-  min-height: 100px;
+  min-height: 150px;
   background-color: white;
   border-radius: 16px;
   margin: 1% 0;
@@ -14,12 +13,13 @@
   width: 25%;
   flex: 1;
   height: 100%;
+  object-fit: cover;
 }
 
 .cartTitle {
   font-weight: 500;
   color: #454545;
-    font-size: 15px;
+  font-size: 15px;
   padding: 10px;
   display: flex;
   align-items: left;
@@ -29,41 +29,56 @@
 }
 
 .cartQ {
-    padding: 10px;
-    font-weight: 600;
-    font-size: 20px;
-    color: #ff6000;
-  flex: 1;
-  flex-direction: column;
+  padding: 10px 10px 10px 0;
+  font-weight: 600;
+  font-size: 20px;
+  color: #ff6000;
+  flex: 2;
+
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
 
 .qCon {
-    margin-bottom: 5px;
-    font-size: 18px;
-    width: 100%;
+  margin-bottom: 5px;
+  font-size: 18px;
+  width: 150%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-.qBtn{
-    color: #FFE6C7;
-    width: 30px;
-    font-size: larger;
-    border: none;
-    border-radius: 16%;
-    background-color: #FF6000;
+.qBtn {
+  align-items: center;
+  justify-content: center;
+  color: #ffe6c7;
+  width: 35px;
+  height: 35px;
+  font-size: larger;
+  border: none;
+  border-radius: 10px;
+  background-color: #ff6000;
+  padding: 5px;
 }
 
-.cartTitleName {
-    display: flex;
-    font-size: 22px;
+.qBtn:hover {
+  background-color: #ffa559;
   color: #ff6000;
 }
 
-.quan{
-    color: #FFA559;
-    margin-top: 4px;
+.cartTitleName {
+  display: flex;
+  font-size: 22px;
+  color: #ff6000;
+}
+
+.quan {
+  color: #ffa559;
+  margin-top: 4px;
+}
+
+.cartPrice {
+  font-size: 25px;
 }
