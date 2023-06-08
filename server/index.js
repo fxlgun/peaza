@@ -35,6 +35,6 @@ app.get("/", (req, res) => {
   res.send("bhai ho rha hai");
 });
 
-app.listen(5000, () => {
+app.listen(process.env.PORT || 2000, () => {
   console.log("tumhara server started");
 });
