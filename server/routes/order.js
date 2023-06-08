@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const Order = require("../models/Order");
-const Item = require("../models/customItems");
+const Item = require("../models/CustomItems");
 const Razorpay = require("razorpay");
 
 var instance = new Razorpay({
