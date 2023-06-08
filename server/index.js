@@ -9,7 +9,9 @@ dotenv.config();
 
 //cors
 var cors = require("cors");
-app.use(cors());
+app.use(cors({
+  origin:'*'
+}));
 
 const pizzaRoute = require("./routes/pizza");
 const userRoute = require("./routes/user");
