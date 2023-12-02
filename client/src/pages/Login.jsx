@@ -42,6 +42,7 @@ const Login = () => {
 
   return (
     <div className="Container">
+      <p style={{position:'absolute', top:'10px', left:'10px'}} >email : test | password : test</p>
       <div className="TitleContainer">
         <h1 className="Title">Peaza</h1>
         <h1 className="tagline">Barge the menu and satisfy your cravings!</h1>

@@ -37,7 +37,7 @@
   width: 27%;
   padding: 20px;
   margin: auto;
-  background-color: whitesmoke;
+  background-color: #ff6000;
   border-radius: 8%;
   align-items: center;
   justify-content: center;
@@ -66,9 +66,9 @@
   margin: 10px 0;
   padding: 15px;
   border-radius: 16px;
-  border: #ffa559 3px solid;
+  border: #ffbd86df 4.5px solid;
   outline: none;
-  font-size: 95%;
+  background-color: #ffe6c7;
 }
 
 .field::placeholder {
@@ -88,7 +88,7 @@
 }
 
 .loginN {
-  color: #ff6000  ;
+  color: #ffe6c7  ;
   font-size: 30px;
   margin: 1% 0 6% 2%;
 }
@@ -99,20 +99,20 @@
   border-radius: 16px;
   padding: 15px 20px;
   background:#ffa559;
-  color: #FF6000;
+  color: #ffe6c7;
   margin: 8px 0;
   font-size: 20px;
   transform: 2s ;
 }
 
 .buttlog:hover{
-  background: #FF6000;
-  color: #ffa559;
+  background: #ffe6c7;
+  color:#ff6000
   
 }
 
 .links{
-  color: #ffa559;
+  color: #ffe6c7;
   font-size: 14px;
     margin: 7px auto 0;
     font-weight: bold;
